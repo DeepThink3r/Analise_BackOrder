@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pipeline>
   <info>
-    <name>aw_to_stg_location</name>
+    <name>aw_to_stg_person</name>
     <name_sync_with_filename>Y</name_sync_with_filename>
     <description/>
     <extended_description/>
@@ -13,21 +13,21 @@
     <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
     <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
     <created_user>-</created_user>
-    <created_date>2025/10/05 23:15:21.739</created_date>
+    <created_date>2025/10/05 23:53:45.957</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2025/10/05 23:15:21.739</modified_date>
+    <modified_date>2025/10/05 23:53:45.957</modified_date>
   </info>
   <notepads>
   </notepads>
   <order>
     <hop>
-      <from>Tabela Product Location</from>
-      <to>stg_Location</to>
+      <from>Person</from>
+      <to>stg_Person</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>Tabela Product Location</name>
+    <name>Person</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -40,21 +40,29 @@
     <connection>CNNSQL-AdventureWorks</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
-    <sql>SELECT LocationID, 
-	Name, 
-	CostRate, 
-	Availability, 
+    <sql>SELECT BusinessEntityID, 
+	PersonType, 
+	NameStyle, 
+	Title, 
+	FirstName, 
+	MiddleName, 
+	LastName, 
+	Suffix, 
+	EmailPromotion, 
+	AdditionalContactInfo, 
+	Demographics, 
+	rowguid, 
 	ModifiedDate
-FROM AdventureWorks.Production.Location;</sql>
+FROM AdventureWorks.Person.Person;</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>176</yloc>
+      <xloc>144</xloc>
+      <yloc>224</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>stg_Location</name>
+    <name>stg_Person</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -68,20 +76,52 @@ FROM AdventureWorks.Production.Location;</sql>
     <connection>CNNPSQL-BI</connection>
     <fields>
       <field>
-        <column_name>LocationID</column_name>
-        <stream_name>LocationID</stream_name>
+        <column_name>BusinessEntityID</column_name>
+        <stream_name>BusinessEntityID</stream_name>
       </field>
       <field>
-        <column_name>Name</column_name>
-        <stream_name>Name</stream_name>
+        <column_name>PersonType</column_name>
+        <stream_name>PersonType</stream_name>
       </field>
       <field>
-        <column_name>CostRate</column_name>
-        <stream_name>CostRate</stream_name>
+        <column_name>NameStyle</column_name>
+        <stream_name>NameStyle</stream_name>
       </field>
       <field>
-        <column_name>Availability</column_name>
-        <stream_name>Availability</stream_name>
+        <column_name>Title</column_name>
+        <stream_name>Title</stream_name>
+      </field>
+      <field>
+        <column_name>FirstName</column_name>
+        <stream_name>FirstName</stream_name>
+      </field>
+      <field>
+        <column_name>MiddleName</column_name>
+        <stream_name>MiddleName</stream_name>
+      </field>
+      <field>
+        <column_name>LastName</column_name>
+        <stream_name>LastName</stream_name>
+      </field>
+      <field>
+        <column_name>Suffix</column_name>
+        <stream_name>Suffix</stream_name>
+      </field>
+      <field>
+        <column_name>EmailPromotion</column_name>
+        <stream_name>EmailPromotion</stream_name>
+      </field>
+      <field>
+        <column_name>AdditionalContactInfo</column_name>
+        <stream_name>AdditionalContactInfo</stream_name>
+      </field>
+      <field>
+        <column_name>Demographics</column_name>
+        <stream_name>Demographics</stream_name>
+      </field>
+      <field>
+        <column_name>rowguid</column_name>
+        <stream_name>rowguid</stream_name>
       </field>
       <field>
         <column_name>ModifiedDate</column_name>
@@ -98,7 +138,7 @@ FROM AdventureWorks.Production.Location;</sql>
     <return_keys>N</return_keys>
     <schema>stg</schema>
     <specify_fields>Y</specify_fields>
-    <table>aw_ProductLocation</table>
+    <table>aw_person</table>
     <tablename_field/>
     <tablename_in_field>N</tablename_in_field>
     <tablename_in_table>Y</tablename_in_table>
@@ -106,8 +146,8 @@ FROM AdventureWorks.Production.Location;</sql>
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
+      <xloc>336</xloc>
+      <yloc>224</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

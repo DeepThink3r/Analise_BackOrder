@@ -198,7 +198,7 @@ FROM AdventureWorks.Production.Product;</sql>
     <return_keys>N</return_keys>
     <schema>stg</schema>
     <specify_fields>Y</specify_fields>
-    <table>produto</table>
+    <table>aw_produto</table>
     <tablename_field/>
     <tablename_in_field>N</tablename_in_field>
     <tablename_in_table>Y</tablename_in_table>
