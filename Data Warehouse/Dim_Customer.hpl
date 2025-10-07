@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>Dim_Customer</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2025/10/06 23:31:33.910</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2025/10/06 23:31:33.910</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+    <hop>
+      <from>Obter Clientes</from>
+      <to>Concat Fields</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Concat Fields</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <ConcatFields>
+      <removeSelectedFields>N</removeSelectedFields>
+      <targetFieldLength>0</targetFieldLength>
+      <targetFieldName>Nome Completo</targetFieldName>
+    </ConcatFields>
+    <enclosure>"</enclosure>
+    <fields>
+      <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
+        <length>50</length>
+        <name>firstname</name>
+        <nullif/>
+        <precision>-1</precision>
+        <trim_type/>
+        <type>String</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
+        <length>50</length>
+        <name>middlename</name>
+        <nullif/>
+        <precision>-1</precision>
+        <trim_type/>
+        <type>String</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
+        <length>50</length>
+        <name>lastname</name>
+        <nullif/>
+        <precision>-1</precision>
+        <trim_type/>
+        <type>String</type>
+      </field>
+    </fields>
+    <force_enclosure>N</force_enclosure>
+    <separator> </separator>
+    <attributes/>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Obter Clientes</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CNNPSQL-BI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>select
+	c.customerid,
+	p.firstname,
+	p.middlename,
+	p.lastname,
+	p.modifieddate,
+	p.persontype
+from stg.aw_customer c
+left join stg.aw_person p
+	on c.personid  = p.businessentityid 
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>
