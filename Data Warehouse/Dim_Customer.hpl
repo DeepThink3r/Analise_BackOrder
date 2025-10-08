@@ -45,39 +45,21 @@
     <enclosure>"</enclosure>
     <fields>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>50</length>
         <name>firstname</name>
-        <nullif/>
         <precision>-1</precision>
-        <trim_type/>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>50</length>
         <name>middlename</name>
-        <nullif/>
         <precision>-1</precision>
-        <trim_type/>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>50</length>
         <name>lastname</name>
-        <nullif/>
         <precision>-1</precision>
-        <trim_type/>
         <type>String</type>
       </field>
     </fields>
@@ -109,11 +91,13 @@
 	p.middlename,
 	p.lastname,
 	p.modifieddate,
-	p.persontype
+	p.persontype,
+    s."Name" as name_store
 from stg.aw_customer c
 left join stg.aw_person p
-	on c.personid  = p.businessentityid 
-</sql>
+	on c.personid  = p.businessentityid
+left join stg.aw_store s
+	on c.storeid = s.businessentityid </sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
