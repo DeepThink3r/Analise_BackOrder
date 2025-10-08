@@ -22,7 +22,7 @@
   <order>
     <hop>
       <from>Tabela Product Location</from>
-      <to>stg_Location</to>
+      <to>output/aw_Location</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -54,7 +54,7 @@ FROM AdventureWorks.Production.Location;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>stg_Location</name>
+    <name>output/aw_Location</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>

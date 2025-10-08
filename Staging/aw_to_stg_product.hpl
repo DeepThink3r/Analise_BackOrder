@@ -22,7 +22,7 @@
   <order>
     <hop>
       <from>Tabela Produto</from>
-      <to>stg_produto</to>
+      <to>output/aw_produto</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -74,7 +74,7 @@ FROM AdventureWorks.Production.Product;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>stg_produto</name>
+    <name>output/aw_produto</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>

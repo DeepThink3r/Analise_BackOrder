@@ -22,7 +22,7 @@
   <order>
     <hop>
       <from>Person</from>
-      <to>stg_Person</to>
+      <to>output/aw_Person</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -62,7 +62,7 @@ FROM AdventureWorks.Person.Person;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>stg_Person</name>
+    <name>output/aw_Person</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>

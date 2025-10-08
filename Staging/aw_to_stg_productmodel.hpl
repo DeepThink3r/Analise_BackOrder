@@ -22,7 +22,7 @@
   <order>
     <hop>
       <from>ProductModel</from>
-      <to>stg_ProductModel</to>
+      <to>output/aw_ProductModel</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -55,7 +55,7 @@ FROM AdventureWorks.Production.ProductModel;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>stg_ProductModel</name>
+    <name>output/aw_ProductModel</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>

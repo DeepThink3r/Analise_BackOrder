@@ -22,7 +22,7 @@
   <order>
     <hop>
       <from>Customer</from>
-      <to>stg_Customer</to>
+      <to>output/aw_Customer</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -56,7 +56,7 @@ FROM AdventureWorks.Sales.Customer;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>stg_Customer</name>
+    <name>output/aw_Customer</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
