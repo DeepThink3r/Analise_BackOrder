@@ -21,8 +21,23 @@
   </notepads>
   <order>
     <hop>
-      <from>Obter Clientes</from>
+      <from>input/aw_clientes</from>
       <to>Concat Fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields</from>
+      <to>Formula</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Formula</from>
+      <to>Se type = null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Se type = null</from>
+      <to>output/Dim_Cliente</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -40,7 +55,7 @@
     <ConcatFields>
       <removeSelectedFields>N</removeSelectedFields>
       <targetFieldLength>0</targetFieldLength>
-      <targetFieldName>Nome Completo</targetFieldName>
+      <targetFieldName>cliente</targetFieldName>
     </ConcatFields>
     <enclosure>"</enclosure>
     <fields>
@@ -72,7 +87,64 @@
     </GUI>
   </transform>
   <transform>
-    <name>Obter Clientes</name>
+    <name>Formula</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formulas>
+      <formula>
+        <formula>IF(TRIM([cliente]) = "", [name_store], [cliente])</formula>
+        <replace_field>cliente</replace_field>
+        <set_na>N</set_na>
+        <value_length>-1</value_length>
+        <value_precision>-1</value_precision>
+        <value_type>2</value_type>
+      </formula>
+    </formulas>
+    <attributes/>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Se type = null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>persontype</name>
+        <set_empty_string>N</set_empty_string>
+        <value>indefinido</value>
+      </field>
+    </fields>
+    <replaceAllByValue>null</replaceAllByValue>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+</valuetypes>
+    <attributes/>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>input/aw_clientes</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -102,6 +174,56 @@ left join stg.aw_store s
     <attributes/>
     <GUI>
       <xloc>176</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>output/Dim_Cliente</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>1000</commit>
+    <connection>CNNPSQL-BI</connection>
+    <fields>
+      <field>
+        <column_name>customerid</column_name>
+        <stream_name>customerid</stream_name>
+      </field>
+      <field>
+        <column_name>modifieddate</column_name>
+        <stream_name>modifieddate</stream_name>
+      </field>
+      <field>
+        <column_name>persontype</column_name>
+        <stream_name>persontype</stream_name>
+      </field>
+      <field>
+        <column_name>cliente</column_name>
+        <stream_name>cliente</stream_name>
+      </field>
+    </fields>
+    <ignore_errors>N</ignore_errors>
+    <only_when_have_rows>N</only_when_have_rows>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <return_keys>N</return_keys>
+    <schema>dwh</schema>
+    <specify_fields>Y</specify_fields>
+    <table>Dim_Cliente</table>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_in_table>Y</tablename_in_table>
+    <truncate>Y</truncate>
+    <use_batch>Y</use_batch>
+    <attributes/>
+    <GUI>
+      <xloc>768</xloc>
       <yloc>128</yloc>
     </GUI>
   </transform>
