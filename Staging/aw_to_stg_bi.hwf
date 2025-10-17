@@ -27,7 +27,7 @@
       <schedulerType>0</schedulerType>
       <weekDay>1</weekDay>
       <parallel>N</parallel>
-      <xloc>112</xloc>
+      <xloc>48</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -40,7 +40,7 @@
       <schemaname>Production</schemaname>
       <tablename>Product</tablename>
       <parallel>N</parallel>
-      <xloc>240</xloc>
+      <xloc>176</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -62,7 +62,7 @@
         </connection>
       </connections>
       <parallel>N</parallel>
-      <xloc>384</xloc>
+      <xloc>320</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -72,7 +72,7 @@
       <type>SUCCESS</type>
       <attributes/>
       <parallel>N</parallel>
-      <xloc>2288</xloc>
+      <xloc>2416</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -98,7 +98,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>560</xloc>
+      <xloc>496</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -114,8 +114,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_ProductInventory.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -126,7 +124,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>784</xloc>
+      <xloc>720</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -142,8 +140,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_location.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -154,7 +150,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>1008</xloc>
+      <xloc>944</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -170,8 +166,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_SalesOrderHeader.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -182,7 +176,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>1280</xloc>
+      <xloc>1216</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -198,8 +192,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_SalesOrderDetail.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -210,7 +202,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>1552</xloc>
+      <xloc>1488</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -226,8 +218,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_customer.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -238,7 +228,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>1792</xloc>
+      <xloc>1728</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -254,8 +244,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_person.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -266,7 +254,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>1984</xloc>
+      <xloc>1920</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -282,6 +270,32 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/Staging/aw_to_stg_store.hpl</filename>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>2080</xloc>
+      <yloc>112</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>aw_to_stg_workorder.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/gabrielbraga/Library/CloudStorage/OneDrive-Pessoal/Documentos/Material de Estudo/Hop/Projetos/Analise_BackOrder/Staging/aw_to_stg_workorder.hpl</filename>
       <logext/>
       <logfile/>
       <loglevel>Basic</loglevel>
@@ -294,7 +308,7 @@
       <set_logfile>N</set_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <parallel>N</parallel>
-      <xloc>2144</xloc>
+      <xloc>2256</xloc>
       <yloc>112</yloc>
       <attributes_hac/>
     </action>
@@ -372,6 +386,13 @@
     </hop>
     <hop>
       <from>aw_to_stg_store.hpl</from>
+      <to>aw_to_stg_workorder.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aw_to_stg_workorder.hpl</from>
       <to>Success</to>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
